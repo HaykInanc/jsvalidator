@@ -6,9 +6,9 @@ const tests = [
 ]
 
 const testHandler = ()=>{
-	inputHandler()
 	document.querySelector('#testResult').innerText = '';
 	tests.forEach(elem=>{
+		log.innerText = '';
 		const answer = document.createElement('li');
 		mainFunc(elem.a, elem.b);
 		if (permanentResultVariable === elem.result){
@@ -16,7 +16,8 @@ const testHandler = ()=>{
 		}else{
 			answer.classList.add('neg');
 		}
-		answer.innerHTML = `a = ${elem.a}; b = ${elem.b};`;
+
+		answer.innerHTML = Object.entries(elem).map(([key, value])=>`${key} = ${value}`).join(' ');
 		document.querySelector('#testResult').appendChild(answer);
 	})
 }

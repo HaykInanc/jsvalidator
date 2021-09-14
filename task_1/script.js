@@ -4,7 +4,7 @@ let btn  = document.querySelector('#submit');
 let runBtn = document.querySelector('#run');
 const log = document.querySelector('#log');
 const result = document.querySelector('#forResult');
-let mainFunc;
+let mainFunc = ()=>{};
 let permanentResultVariable = undefined;
 
 js.value = `
@@ -19,7 +19,6 @@ let postScript = ()=>{
 };
 
 let writeToLog = (text)=>{
-	log.innerText = '';
 	const pElem = document.createElement('p');
 	pElem.innerText = text;
 	permanentResultVariable = text;
@@ -32,25 +31,23 @@ let writeToResult = (text)=>{
 	result.appendChild(pElem);
 }
 
-const runJS = (a, b)=>{
+
+const inputHandler = ()=>{
 	preScript();
 	try{
-		mainFunc(a, b);
+		log.innerText = '';
+		eval(`
+			mainFunc = (a, b)=>{
+				${js.value}
+			};
+		`);
+		mainFunc(15, 43);
 		writeToResult(permanentResultVariable);
 	}catch(e){
 		writeToLog(e.name + ': ' + e.message);
 	}
 	postScript();
-}
 
-const inputHandler = ()=>{
-	eval(`
-		function main(a, b){
-			${js.value}
-		};
-	`);
-	mainFunc = main;
-	runJS(15, 43)
 };
 
 
