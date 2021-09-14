@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="task">
+		<b>Задачи:</b>
+		<p>В программе объявлены переменные a и b, необходимо вывести в консоль их сумму</p>
+
+	</div>
+	<ul id="testResult"></ul>
+	<div class="submit_box">
+		<button id="run">Запустить</button>
+		<button id="submit">Проверить</button>
+		<p>Код: <span id="code">пример кода!</span></p>
+	</div>
+	<div class="fields">
+		<h3>Javascript:</h3>
+		<div class="field">
+			<textarea id="js"
+			onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}"
+			></textarea>
+			<div class="result">
+				<h3>Результат</h3>
+				<div id="forResult"></div>
+			</div>
+		</div>
+		<div class="logs">
+			<h3>Logs:</h3>
+			<p id="log"></p>
+		</div>
+	</div>
+	<script type="text/javascript" src="script.js"></script>
+	<script type="text/javascript" src="tests.js"></script>
+	<script type="text/javascript" src="calculate_code_obf.js"></script>
+</body>
+</html>
