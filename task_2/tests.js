@@ -1,5 +1,5 @@
 const tests = [
-	{result: 'привет Мир!'}
+	{result: 'Moscow'}
 ]
 
 const testHandler = ()=>{

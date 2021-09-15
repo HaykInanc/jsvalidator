@@ -1,13 +1,16 @@
 const tests = [
-	{result: 'привет Мир!'}
-]
+	{name: '   Анатолий', lastname: '  Сидоров', result: 15},
+	{name: 'Семен', lastname: '\nСеменов', result: 12},
+	{name: 'Светлана\t', lastname: 'Олеговна', result: 16},
+	{name: 'Максим', lastname: ' Петров', result: 12},
+];
 
 const testHandler = ()=>{
 	document.querySelector('#testResult').innerText = '';
 	tests.forEach(elem=>{
 		log.innerText = '';
 		const answer = document.createElement('li');
-		mainFunc();
+		mainFunc(elem.name, elem.lastname);
 		if (permanentResultVariable === elem.result){
 			answer.classList.add('pos');
 		}else{
