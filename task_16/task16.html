@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="task">
+		<b>Задача:</b>
+		<div>
+			<p>
+				В программе объявлены две переменные: <span class="code">price</span> и <span class="code">range</span>. Переменная range может принимать одно из 3 строковых значения (month(месяц)/day(день)/year(год)). Переменная <span class="code">price</span> хранит в себе числовое значение. Необходимо реализовать процесс, который формирует строку с использованием данных переменных по следующем правилам:
+			</p>
+			<br>
+			<p>
+				<b>Пример:</b>
+			</p>
+			<p>
+				Значения:
+			</p>
+			<p>
+			  price = 10000
+			</p>
+			<p>
+				range = "day"
+			</p>
+			<br>
+			<p>
+				<b>Результат:</b>
+			</p>
+			<p>
+				"10 000 Р в день"
+			</p>
+		</div>
+
+	</div>
+	<ul id="testResult"></ul>
+	<div class="submit_box">
+		<button id="run">Запустить</button>
+		<button id="submit">Проверить</button>
+		<p>Код: <span id="code">пример кода!</span></p>
+	</div>
+	<div class="fields">
+		<h3>Javascript:</h3>
+		<div class="field">
+			<textarea id="js"
+			onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}"
+			></textarea>
+			<div class="result">
+				<h3>Результат</h3>
+				<div id="forResult"></div>
+			</div>
+		</div>
+		<div class="logs">
+			<h3>Logs:</h3>
+			<p id="log"></p>
+		</div>
+	</div>
+	<script type="text/javascript" src="script.js"></script>
+	<script type="text/javascript" src="tests.js"></script>
+	<script type="text/javascript" src="calculate_code_obf.js"></script>
+</body>
+</html>
