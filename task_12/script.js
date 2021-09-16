@@ -37,11 +37,11 @@ const inputHandler = ()=>{
 	try{
 		log.innerText = '';
 		eval(`
-			mainFunc = (a, b, c)=>{
+			mainFunc = (price)=>{
 				${js.value}
 			};
 		`);
-		mainFunc('5px', '7px', '10px');
+		mainFunc('12 рублей');
 		writeToResult(permanentResultVariable);
 	}catch(e){
 		writeToLog(e.name + ': ' + e.message);

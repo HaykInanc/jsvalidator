@@ -37,11 +37,15 @@ const inputHandler = ()=>{
 	try{
 		log.innerText = '';
 		eval(`
-			mainFunc = (a, b, c)=>{
+			mainFunc = (obj)=>{
 				${js.value}
 			};
 		`);
-		mainFunc('5px', '7px', '10px');
+		mainFunc({
+			name: 'Анатлий',
+			lastname: 'Максимов',
+			age: 32
+		});
 		writeToResult(permanentResultVariable);
 	}catch(e){
 		writeToLog(e.name + ': ' + e.message);

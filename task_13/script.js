@@ -13,6 +13,7 @@ console.log(a + b);
 
 let preScript = ()=>{
 	console['log']=writeToLog;
+	Math['max'] = ()=>console.log('Хорошая попытка =) Но нет!');
 };
 
 let postScript = ()=>{
@@ -41,7 +42,7 @@ const inputHandler = ()=>{
 				${js.value}
 			};
 		`);
-		mainFunc('5px', '7px', '10px');
+		mainFunc(32, 5, 14);
 		writeToResult(permanentResultVariable);
 	}catch(e){
 		writeToLog(e.name + ': ' + e.message);

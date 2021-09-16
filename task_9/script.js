@@ -20,14 +20,14 @@ let postScript = ()=>{
 
 let writeToLog = (text)=>{
 	const pElem = document.createElement('p');
-	pElem.innerText = text;
+	pElem.innerText = JSON.stringify(text);
 	permanentResultVariable = text;
 	log.appendChild(pElem);
 }
 let writeToResult = (text)=>{
 	result.innerText = '';
 	const pElem = document.createElement('p');
-	pElem.innerText = text;
+	pElem.innerText = JSON.stringify(text);
 	result.appendChild(pElem);
 }
 
@@ -37,11 +37,11 @@ const inputHandler = ()=>{
 	try{
 		log.innerText = '';
 		eval(`
-			mainFunc = (a, b, c)=>{
+			mainFunc = (name, lastname, age)=>{
 				${js.value}
 			};
 		`);
-		mainFunc('5px', '7px', '10px');
+		mainFunc('Анатлий','Максимов', 32);
 		writeToResult(permanentResultVariable);
 	}catch(e){
 		writeToLog(e.name + ': ' + e.message);
